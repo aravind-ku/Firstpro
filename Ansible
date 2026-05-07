@@ -1,0 +1,24 @@
+sudo dnf install -y ansible
+
+sudo dnf install -y python3-pip
+pip3 install --upgrade pip
+pip3 install ansible
+
+ansible --version
+
+mkdir -p /etc/ansible
+vi /etc/ansible/ansible.cfg
+
+[defaults]
+inventory = /etc/ansible/hosts
+remote_user = root
+host_key_checking = False
+retry_files_enabled = False
+
+  vi /etc/ansible/hosts
+
+  [DEV]
+172.31.43.237
+
+  [Test]
+172.31.43.237
